@@ -5,7 +5,7 @@
   "scripts": {
     "build": "node node_modules/typescript/bin/tsc",
     "start": "node dist/index.js",
-    "dev": "node node_modules/ts-node-dev/bin/ts-node-dev --files --respawn src/index.ts",
+    "dev": "node node_modules/ts-node-dev/lib/bin.js --files --respawn src/index.ts",
     "test": "node node_modules/vitest/vitest.mjs run"
   },
   "dependencies": {

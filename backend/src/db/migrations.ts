@@ -1,7 +1,8 @@
 import type Database from 'better-sqlite3';
+import { config } from '../config';
 
 /** Creates the durable schema required for mobile OTP authentication. */
-export function runMigrations(database: Database.Database): void {
+export function runMigrations(database: Database.Database, catalogueEmpty = config.catalogueEmpty): void {
   database.exec(`
     CREATE TABLE IF NOT EXISTS users (
       id TEXT PRIMARY KEY,
@@ -50,5 +51,5 @@ export function runMigrations(database: Database.Database): void {
     insertMapping.run('movie-bloody-romeo', 'theatre-sudharsham-70mm');
     insertMapping.run('movie-og2', 'theatre-allu-cinemas');
   });
-  seedCatalogue();
+  if (!catalogueEmpty) seedCatalogue();
 }

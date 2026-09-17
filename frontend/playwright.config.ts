@@ -8,6 +8,7 @@ export default defineConfig({
   workers: 1,
   use: {
     ...devices['iPhone 13'],
+    browserName: 'chromium',
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure'
   },
@@ -30,8 +31,8 @@ export default defineConfig({
   ],
   webServer: [
     {
-      command: 'cd ../backend && PORT=3001 DATABASE_PATH=./e2e-default.sqlite CORS_ORIGIN=http://127.0.0.1:3000 SESSION_SECRET=e2e-session-secret-value COOKIE_SECURE=false node node_modules/ts-node-dev/bin/ts-node-dev --files --respawn src/index.ts',
-      url: 'http://127.0.0.1:3001/health',
+      command: 'cd ../backend && PORT=3001 DATABASE_PATH=/tmp/bookmyshow-e2e-default.sqlite CORS_ORIGIN=http://127.0.0.1:3000 SESSION_SECRET=e2e-session-secret-value COOKIE_SECURE=false node node_modules/ts-node-dev/lib/bin.js --files --respawn src/index.ts',
+      url: 'http://127.0.0.1:3001/api/health',
       timeout: 30_000,
       reuseExistingServer: false
     },
@@ -42,8 +43,8 @@ export default defineConfig({
       reuseExistingServer: false
     },
     {
-      command: 'cd ../backend && PORT=3101 DATABASE_PATH=./e2e-empty-catalogue.sqlite CATALOGUE_EMPTY=true CORS_ORIGIN=http://127.0.0.1:3100 SESSION_SECRET=e2e-session-secret-value COOKIE_SECURE=false node node_modules/ts-node-dev/bin/ts-node-dev --files --respawn src/index.ts',
-      url: 'http://127.0.0.1:3101/health',
+      command: 'cd ../backend && PORT=3101 DATABASE_PATH=/tmp/bookmyshow-e2e-empty.sqlite CATALOGUE_EMPTY=true CORS_ORIGIN=http://127.0.0.1:3100 SESSION_SECRET=e2e-session-secret-value COOKIE_SECURE=false node node_modules/ts-node-dev/lib/bin.js --files --respawn src/index.ts',
+      url: 'http://127.0.0.1:3101/api/health',
       timeout: 30_000,
       reuseExistingServer: false
     },
@@ -54,8 +55,8 @@ export default defineConfig({
       reuseExistingServer: false
     },
     {
-      command: 'cd ../backend && PORT=3201 DATABASE_PATH=./e2e-delayed-catalogue.sqlite CATALOGUE_DELAY_MS=1500 CORS_ORIGIN=http://127.0.0.1:3200 SESSION_SECRET=e2e-session-secret-value COOKIE_SECURE=false node node_modules/ts-node-dev/bin/ts-node-dev --files --respawn src/index.ts',
-      url: 'http://127.0.0.1:3201/health',
+      command: 'cd ../backend && PORT=3201 DATABASE_PATH=/tmp/bookmyshow-e2e-delayed.sqlite CATALOGUE_DELAY_MS=1500 CORS_ORIGIN=http://127.0.0.1:3200 SESSION_SECRET=e2e-session-secret-value COOKIE_SECURE=false node node_modules/ts-node-dev/lib/bin.js --files --respawn src/index.ts',
+      url: 'http://127.0.0.1:3201/api/health',
       timeout: 30_000,
       reuseExistingServer: false
     },

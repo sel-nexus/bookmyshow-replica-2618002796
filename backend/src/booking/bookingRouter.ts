@@ -4,7 +4,7 @@ import { SessionService } from '../auth/sessionService';
 import { ApiError } from '../shared/errors';
 import { BookingService } from './bookingService';
 
-const requestSchema = z.object({ movieId: z.string().min(1), theatreId: z.string().min(1), seats: z.array(z.string().min(1)).min(1), paymentMethod: z.enum(['CARD', 'UPI']), totalPricePaise: z.number().int().positive() }).strict();
+const requestSchema = z.object({ movieId: z.string().min(1).max(128), theatreId: z.string().min(1).max(128), seats: z.array(z.string().min(1).max(32)).min(1).max(100), paymentMethod: z.enum(['CARD', 'UPI']), totalPricePaise: z.number().int().positive() }).strict();
 const uuidSchema = z.string().uuid();
 
 /** Builds protected, idempotent booking confirmation routes. */
