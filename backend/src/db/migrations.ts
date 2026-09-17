@@ -22,6 +22,19 @@ export function runMigrations(database: Database.Database): void {
       movie_id TEXT NOT NULL PRIMARY KEY REFERENCES movies(id),
       theatre_id TEXT NOT NULL UNIQUE REFERENCES theatres(id)
     );
+    CREATE TABLE IF NOT EXISTS bookings (
+      confirmation_id TEXT PRIMARY KEY,
+      user_id TEXT NOT NULL REFERENCES users(id),
+      idempotency_key TEXT NOT NULL,
+      payload_fingerprint TEXT NOT NULL,
+      movie_id TEXT NOT NULL REFERENCES movies(id),
+      theatre_id TEXT NOT NULL REFERENCES theatres(id),
+      seats_json TEXT NOT NULL CHECK (seats_json = '["A1","A2","A3"]'),
+      payment_method TEXT NOT NULL CHECK (payment_method IN ('CARD', 'UPI')),
+      total_price_paise INTEGER NOT NULL CHECK (total_price_paise = 45000),
+      created_at TEXT NOT NULL,
+      UNIQUE (user_id, idempotency_key)
+    );
   `);
   const insertMovie = database.prepare('INSERT OR IGNORE INTO movies (id, title, display_order) VALUES (?, ?, ?)');
   const insertTheatre = database.prepare('INSERT OR IGNORE INTO theatres (id, name, display_order) VALUES (?, ?, ?)');

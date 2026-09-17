@@ -8,15 +8,21 @@ interface BookingJourneyState {
   selectedTheatre: CatalogTheatre | null;
   selectedSeats: string[] | null;
   totalPricePaise: number | null;
+  paymentMethod: 'CARD' | 'UPI' | null;
+  bookingConfirmation: import('../lib/api').BookingConfirmation | null;
 }
 type BookingJourneyAction =
   | { type: 'SELECT_MOVIE'; movie: CatalogMovie }
   | { type: 'SELECT_THEATRE'; theatre: CatalogTheatre }
-  | { type: 'SELECT_PRESET_SEATS' };
+  | { type: 'SELECT_PRESET_SEATS' }
+  | { type: 'SELECT_PAYMENT_METHOD'; paymentMethod: 'CARD' | 'UPI' }
+  | { type: 'SAVE_CONFIRMATION'; bookingConfirmation: import('../lib/api').BookingConfirmation };
 interface BookingJourneyContextValue extends BookingJourneyState {
   selectMovie: (movie: CatalogMovie) => void;
   selectTheatre: (theatre: CatalogTheatre) => void;
   selectPresetSeats: () => void;
+  selectPaymentMethod: (paymentMethod: 'CARD' | 'UPI') => void;
+  saveConfirmation: (bookingConfirmation: import('../lib/api').BookingConfirmation) => void;
 }
 
 const presetSeats = ['A1', 'A2', 'A3'];
@@ -28,10 +34,13 @@ const BookingJourneyContext = createContext<BookingJourneyContextValue | null>(n
 function bookingJourneyReducer(state: BookingJourneyState, action: BookingJourneyAction): BookingJourneyState {
   if (action.type === 'SELECT_MOVIE') {
     return {
+      ...state,
       selectedMovie: action.movie,
       selectedTheatre: null,
       selectedSeats: null,
-      totalPricePaise: null
+      totalPricePaise: null,
+      paymentMethod: null,
+      bookingConfirmation: null
     };
   }
   if (action.type === 'SELECT_THEATRE') {
@@ -42,11 +51,9 @@ function bookingJourneyReducer(state: BookingJourneyState, action: BookingJourne
       totalPricePaise: null
     };
   }
-  return {
-    ...state,
-    selectedSeats: [...presetSeats],
-    totalPricePaise: presetTotalPricePaise
-  };
+  if (action.type === 'SELECT_PRESET_SEATS') return { ...state, selectedSeats: [...presetSeats], totalPricePaise: presetTotalPricePaise };
+  if (action.type === 'SELECT_PAYMENT_METHOD') return { ...state, paymentMethod: action.paymentMethod };
+  return { ...state, bookingConfirmation: action.bookingConfirmation };
 }
 
 /** Store deliberate booking choices for client-side journey pages. */
@@ -55,7 +62,9 @@ export function BookingJourneyProvider({ children }: { children: ReactNode }): R
     selectedMovie: null,
     selectedTheatre: null,
     selectedSeats: null,
-    totalPricePaise: null
+    totalPricePaise: null,
+    paymentMethod: null,
+    bookingConfirmation: null
   });
 
   return (
@@ -64,7 +73,9 @@ export function BookingJourneyProvider({ children }: { children: ReactNode }): R
         ...state,
         selectMovie: (movie) => dispatch({ type: 'SELECT_MOVIE', movie }),
         selectTheatre: (theatre) => dispatch({ type: 'SELECT_THEATRE', theatre }),
-        selectPresetSeats: () => dispatch({ type: 'SELECT_PRESET_SEATS' })
+        selectPresetSeats: () => dispatch({ type: 'SELECT_PRESET_SEATS' }),
+        selectPaymentMethod: (paymentMethod) => dispatch({ type: 'SELECT_PAYMENT_METHOD', paymentMethod }),
+        saveConfirmation: (bookingConfirmation) => dispatch({ type: 'SAVE_CONFIRMATION', bookingConfirmation })
       }}
     >
       {children}

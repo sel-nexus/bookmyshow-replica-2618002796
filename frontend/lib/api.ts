@@ -7,6 +7,12 @@ interface ApiErrorEnvelope { error: { code: string; message: string; requestId: 
 /** Represents a successful OTP verification response. */
 export interface VerifyResponse { status: 'AUTHENTICATED'; sessionToken: string; user: AuthUser; }
 
+/** Represents a backend-sourced confirmed booking. */
+export interface BookingConfirmation { confirmationId: string; movie: CatalogMovie; theatre: CatalogTheatre; seats: string[]; paymentMethod: 'CARD' | 'UPI'; totalPricePaise: number; createdAt: string; }
+
+/** Represents the payment-data-free booking contract sent to the backend. */
+export interface CreateBookingRequest { movieId: string; theatreId: string; seats: string[]; paymentMethod: 'CARD' | 'UPI'; totalPricePaise: number; }
+
 /** Represents a movie available for deliberate selection. */
 export interface CatalogMovie { id: string; title: string; }
 
@@ -40,6 +46,13 @@ export async function fetchTheatres(movieId: string): Promise<CatalogTheatre[]> 
   const response = await fetch(`${apiBaseUrl}/api/theatres?movieId=${encodeURIComponent(movieId)}`, { credentials: 'include' });
   if (!response.ok) throw await readApiError(response);
   return (await response.json() as { theatres: CatalogTheatre[] }).theatres;
+}
+
+/** Confirms a booking while deliberately excluding raw card and UPI values. */
+export async function createBooking(request: CreateBookingRequest, idempotencyKey: string): Promise<BookingConfirmation> {
+  const response = await fetch(`${apiBaseUrl}/api/bookings`, { method: 'POST', credentials: 'include', headers: { 'Content-Type': 'application/json', 'Idempotency-Key': idempotencyKey }, body: JSON.stringify(request) });
+  if (!response.ok) throw await readApiError(response);
+  return (await response.json() as { booking: BookingConfirmation }).booking;
 }
 
 /** Extracts a human-readable failure from the public API error envelope. */
