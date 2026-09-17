@@ -6,7 +6,7 @@
     "build": "node node_modules/typescript/bin/tsc",
     "start": "node dist/index.js",
     "dev": "node node_modules/ts-node-dev/lib/bin.js --files --respawn src/index.ts",
-    "test": "node node_modules/vitest/vitest.mjs run"
+    "test": "SESSION_SECRET=test-session-secret-not-for-production node node_modules/vitest/vitest.mjs run"
   },
   "dependencies": {
     "better-sqlite3": "^12.6.2",
