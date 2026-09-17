@@ -4,6 +4,9 @@ import type Database from 'better-sqlite3';
 import { createAuthRouter } from './auth/authRouter';
 import { AuthService } from './auth/authService';
 import { SessionService } from './auth/sessionService';
+import { createCatalogRouter } from './catalog/catalogRouter';
+import { CatalogRepository } from './catalog/catalogRepository';
+import { CatalogService } from './catalog/catalogService';
 import { UserRepository } from './auth/userRepository';
 import { config, type AppConfig } from './config';
 import { createDatabase } from './db/database';
@@ -14,6 +17,7 @@ export function createApp(options: { database?: Database.Database; appConfig?: A
   const appConfig = options.appConfig ?? config;
   const database = options.database ?? createDatabase(appConfig.databasePath);
   const authService = new AuthService(new UserRepository(database), new SessionService(appConfig.sessionSecret));
+  const catalogService = new CatalogService(new CatalogRepository(database));
   const app = express();
   app.use(cors({ origin: appConfig.corsOrigin, credentials: true }));
   app.use(express.json());
@@ -21,6 +25,7 @@ export function createApp(options: { database?: Database.Database; appConfig?: A
   app.use(requestIdMiddleware);
   app.get('/api/health', (_req: Request, res: Response): void => { res.status(200).json({ status: 'ok' }); });
   app.use('/api/auth', createAuthRouter(authService, appConfig));
+  app.use('/api', createCatalogRouter(catalogService));
   app.use(errorHandler);
   return app;
 }

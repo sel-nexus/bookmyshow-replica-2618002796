@@ -1,0 +1,376 @@
+{
+  "communities": {
+    "0": [
+      "backend_package",
+      "backend_package_dependencies",
+      "backend_package_dependencies_better_sqlite3",
+      "backend_package_dependencies_cookie_parser",
+      "backend_package_dependencies_cors",
+      "backend_package_dependencies_dotenv",
+      "backend_package_dependencies_express",
+      "backend_package_dependencies_jsonwebtoken",
+      "backend_package_dependencies_zod",
+      "backend_package_name",
+      "backend_package_private",
+      "backend_package_scripts",
+      "backend_package_scripts_build",
+      "backend_package_scripts_dev",
+      "backend_package_scripts_start",
+      "backend_package_scripts_test",
+      "backend_package_version",
+      "better_sqlite3",
+      "cookie_parser",
+      "cors",
+      "dotenv",
+      "express",
+      "jsonwebtoken",
+      "zod"
+    ],
+    "1": [
+      "backend_src_app",
+      "backend_src_app_createapp",
+      "backend_src_auth_authrouter",
+      "backend_src_auth_authrouter_createauthrouter",
+      "backend_src_auth_authrouter_loginschema",
+      "backend_src_auth_authrouter_verifyschema",
+      "backend_src_config",
+      "backend_src_config_appconfig",
+      "backend_src_config_config",
+      "backend_src_config_environmentschema",
+      "backend_src_config_loadconfig",
+      "backend_src_db_database",
+      "backend_src_db_database_createdatabase",
+      "backend_src_index",
+      "backend_src_index_start",
+      "backend_src_shared_errors",
+      "backend_src_shared_errors_apierror",
+      "backend_src_shared_errors_apierror_constructor",
+      "backend_src_shared_errors_errorhandler",
+      "backend_src_shared_errors_requestidmiddleware",
+      "backend_tests_auth_api_test",
+      "backend_tests_auth_api_test_buildapp",
+      "backend_tests_auth_api_test_files",
+      "backend_tests_auth_api_test_testconfig"
+    ],
+    "2": [
+      "backend_package_devdependencies_types_node",
+      "backend_package_devdependencies_typescript",
+      "backend_package_json_types_node",
+      "backend_package_json_typescript",
+      "frontend_package_devdependencies",
+      "frontend_package_devdependencies_jsdom",
+      "frontend_package_devdependencies_testing_library_jest_dom",
+      "frontend_package_devdependencies_testing_library_react",
+      "frontend_package_devdependencies_testing_library_user_event",
+      "frontend_package_devdependencies_types_node",
+      "frontend_package_devdependencies_types_react",
+      "frontend_package_devdependencies_types_react_dom",
+      "frontend_package_devdependencies_typescript",
+      "frontend_package_devdependencies_vitest",
+      "frontend_package_json_vitest",
+      "jsdom",
+      "testing_library_jest_dom",
+      "testing_library_react",
+      "testing_library_user_event",
+      "types_react",
+      "types_react_dom"
+    ],
+    "3": [
+      "backend_src_auth_authservice",
+      "backend_src_auth_authservice_authservice",
+      "backend_src_auth_authservice_authservice_constructor",
+      "backend_src_auth_authservice_authservice_verify",
+      "backend_src_auth_authservice_verifiedsession",
+      "backend_src_auth_sessionservice",
+      "backend_src_auth_sessionservice_sessionservice",
+      "backend_src_auth_sessionservice_sessionservice_constructor",
+      "backend_src_auth_sessionservice_sessionservice_issue",
+      "backend_src_auth_userrepository",
+      "backend_src_auth_userrepository_user",
+      "backend_src_auth_userrepository_userrepository",
+      "backend_src_auth_userrepository_userrepository_constructor",
+      "backend_src_auth_userrepository_userrepository_findbymobile",
+      "backend_src_auth_userrepository_userrepository_findorcreate",
+      "backend_src_db_migrations",
+      "backend_src_db_migrations_runmigrations",
+      "backend_tests_auth_service_test",
+      "backend_tests_auth_service_test_buildservice",
+      "backend_tests_auth_service_test_databases",
+      "backend_tests_auth_service_test_files"
+    ],
+    "4": [
+      "backend_package_devdependencies",
+      "backend_package_devdependencies_supertest",
+      "backend_package_devdependencies_ts_node_dev",
+      "backend_package_devdependencies_types_better_sqlite3",
+      "backend_package_devdependencies_types_cookie_parser",
+      "backend_package_devdependencies_types_cors",
+      "backend_package_devdependencies_types_express",
+      "backend_package_devdependencies_types_jsonwebtoken",
+      "backend_package_devdependencies_types_supertest",
+      "backend_package_devdependencies_vitest",
+      "backend_package_json_vitest",
+      "supertest",
+      "ts_node_dev",
+      "types_better_sqlite3",
+      "types_cookie_parser",
+      "types_cors",
+      "types_express",
+      "types_jsonwebtoken",
+      "types_supertest"
+    ],
+    "5": [
+      "frontend_tsconfig_compileroptions",
+      "frontend_tsconfig_compileroptions_allowjs",
+      "frontend_tsconfig_compileroptions_esmoduleinterop",
+      "frontend_tsconfig_compileroptions_incremental",
+      "frontend_tsconfig_compileroptions_isolatedmodules",
+      "frontend_tsconfig_compileroptions_jsx",
+      "frontend_tsconfig_compileroptions_lib",
+      "frontend_tsconfig_compileroptions_module",
+      "frontend_tsconfig_compileroptions_moduleresolution",
+      "frontend_tsconfig_compileroptions_noemit",
+      "frontend_tsconfig_compileroptions_plugins",
+      "frontend_tsconfig_compileroptions_resolvejsonmodule",
+      "frontend_tsconfig_compileroptions_skiplibcheck",
+      "frontend_tsconfig_compileroptions_strict",
+      "frontend_tsconfig_compileroptions_target",
+      "ref_dom",
+      "ref_dom_iterable",
+      "ref_esnext"
+    ],
+    "6": [
+      "plan_auth_catalog_journey_checkout_booking_boundaries",
+      "plan_bookmyshow_replica",
+      "plan_consumer_booking_workflow",
+      "plan_database_persisted_confirmation",
+      "plan_deterministic_seat_selection",
+      "plan_express_typescript_backend",
+      "plan_mock_card_upi_checkout",
+      "plan_nextjs_app_router_frontend",
+      "plan_sqlite_persistence",
+      "plan_typescript_node_fullstack_system",
+      "todos_auth_foundation",
+      "todos_authenticated_idempotent_sqlite_booking",
+      "todos_booking_confirmation",
+      "todos_catalogue_theatres",
+      "todos_fixed_otp_authentication",
+      "todos_preset_seats",
+      "todos_seeded_catalogue_mapping_retrieval"
+    ],
+    "7": [
+      "frontend_app_login_page",
+      "frontend_app_login_page_loginpage",
+      "frontend_components_loginform",
+      "frontend_components_loginform_loginform",
+      "frontend_components_otpform",
+      "frontend_components_otpform_otpform",
+      "frontend_components_otpform_otpformprops",
+      "frontend_lib_api",
+      "frontend_lib_api_apierrorenvelope",
+      "frontend_lib_api_authuser",
+      "frontend_lib_api_readapierror",
+      "frontend_lib_api_requestlogin",
+      "frontend_lib_api_verifyotp",
+      "frontend_lib_api_verifyresponse",
+      "frontend_tests_auth_test",
+      "frontend_tests_auth_test_fetchmock"
+    ],
+    "8": [
+      "frontend_package",
+      "frontend_package_dependencies",
+      "frontend_package_dependencies_next",
+      "frontend_package_dependencies_react",
+      "frontend_package_dependencies_react_dom",
+      "frontend_package_name",
+      "frontend_package_private",
+      "frontend_package_scripts",
+      "frontend_package_scripts_build",
+      "frontend_package_scripts_dev",
+      "frontend_package_scripts_start",
+      "frontend_package_scripts_test",
+      "frontend_package_version",
+      "next",
+      "react",
+      "react_dom"
+    ],
+    "9": [
+      "backend_tsconfig",
+      "backend_tsconfig_compileroptions",
+      "backend_tsconfig_compileroptions_downleveliteration",
+      "backend_tsconfig_compileroptions_esmoduleinterop",
+      "backend_tsconfig_compileroptions_forceconsistentcasinginfilenames",
+      "backend_tsconfig_compileroptions_module",
+      "backend_tsconfig_compileroptions_outdir",
+      "backend_tsconfig_compileroptions_rootdir",
+      "backend_tsconfig_compileroptions_skiplibcheck",
+      "backend_tsconfig_compileroptions_strict",
+      "backend_tsconfig_compileroptions_target",
+      "backend_tsconfig_include",
+      "ref_src_ts"
+    ],
+    "10": [
+      "backend_tsconfig_exclude",
+      "backend_tsconfig_json_ref_node_modules",
+      "frontend_tsconfig",
+      "frontend_tsconfig_exclude",
+      "frontend_tsconfig_include",
+      "ref_dist",
+      "ref_next_env_d_ts",
+      "ref_next_types_ts",
+      "ref_tests",
+      "ref_ts",
+      "ref_tsx"
+    ],
+    "11": [
+      "frontend_app_layout",
+      "frontend_app_layout_metadata",
+      "frontend_app_layout_rootlayout"
+    ],
+    "12": [
+      "frontend_app_page",
+      "frontend_app_page_homepage"
+    ],
+    "13": [
+      "frontend_next_config",
+      "frontend_next_config_nextconfig"
+    ],
+    "14": [
+      "e2e_auth_spec"
+    ],
+    "15": [
+      "frontend_vitest_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.08333333333333333,
+    "1": 0.17391304347826086,
+    "2": 0.09523809523809523,
+    "3": 0.18571428571428572,
+    "4": 0.10526315789473684,
+    "5": 0.1111111111111111,
+    "6": 0.13970588235294118,
+    "7": 0.19166666666666668,
+    "8": 0.125,
+    "9": 0.15384615384615385,
+    "10": 0.18181818181818182,
+    "11": 0.6666666666666666,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0
+  },
+  "gods": [
+    {
+      "id": "frontend_tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 15
+    },
+    {
+      "id": "backend_tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 10
+    },
+    {
+      "id": "backend_src_app_createapp",
+      "label": "createApp()",
+      "degree": 9
+    },
+    {
+      "id": "backend_src_auth_userrepository_userrepository",
+      "label": "UserRepository",
+      "degree": 8
+    },
+    {
+      "id": "backend_src_auth_sessionservice_sessionservice",
+      "label": "SessionService",
+      "degree": 7
+    },
+    {
+      "id": "backend_src_auth_authservice_authservice",
+      "label": "AuthService",
+      "degree": 6
+    },
+    {
+      "id": "backend_src_db_database_createdatabase",
+      "label": "createDatabase()",
+      "degree": 6
+    },
+    {
+      "id": "backend_package_scripts",
+      "label": "scripts",
+      "degree": 5
+    },
+    {
+      "id": "backend_src_auth_userrepository_user",
+      "label": "User",
+      "degree": 5
+    },
+    {
+      "id": "backend_src_db_migrations_runmigrations",
+      "label": "runMigrations()",
+      "degree": 5
+    }
+  ],
+  "surprises": [
+    {
+      "source": "exclude",
+      "target": "node_modules",
+      "source_files": [
+        "frontend/tsconfig.json",
+        "backend/tsconfig.json"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "extends",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "Auth Foundation",
+      "target": "SQLite Persistence",
+      "source_files": [
+        "todos.yaml",
+        "PLAN.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "conceptually_related_to",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "Preset Seats",
+      "target": "Deterministic Seat Selection",
+      "source_files": [
+        "todos.yaml",
+        "PLAN.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "conceptually_related_to",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "Booking Confirmation",
+      "target": "Mock Card/UPI Checkout",
+      "source_files": [
+        "todos.yaml",
+        "PLAN.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "conceptually_related_to",
+      "why": "connects across different repos/directories"
+    },
+    {
+      "source": "Booking Confirmation",
+      "target": "Database-Persisted Confirmation",
+      "source_files": [
+        "todos.yaml",
+        "PLAN.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "conceptually_related_to",
+      "why": "connects across different repos/directories"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}
